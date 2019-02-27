@@ -47,10 +47,12 @@ def main():
 	print(len(wordList))
 	temps = 0
 	boi = 0
-	f2 = open("outPut2.txt","w+")
+	f2 = open("outPut3.txt","w+")
 	for i in range(len(wordList)):
 		s = os.popen('sensors').readlines()
 		temps += float(s[11][16:20])
+		if float(s[11][16:20]) >70:
+			break
 		for j in range(i+1,len(wordList)):
 			boi+=1
 
